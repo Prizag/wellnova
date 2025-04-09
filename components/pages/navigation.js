@@ -1,7 +1,12 @@
 import { Card } from '@/components/ui/card';
 import {Hospital} from 'lucide-react'
 import { Button } from '../ui/button';
+import { useRouter } from 'next/router';
 export default function Navigation(){
+    const router = useRouter();
+    const HandleLogin=()=>{
+        router.push('/login')
+    }
     return(
         <>
         <div >
@@ -16,7 +21,7 @@ export default function Navigation(){
                 <li>  Contact</li>
                 </div>
                 <div className='space-x-4 p-2'>
-                    <Button variant="primary" size={12}>Login</Button>
+                    <Button onClick={HandleLogin} variant="primary" size={12}>Login</Button>
                     <Button variant="secondary" size={12}>SignUp</Button>
                 </div>
             </Card>
